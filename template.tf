@@ -40,7 +40,7 @@ resource "aws_instance" "ec2ByTFE" {
   instance_type = "${var.instance_type}"
   key_name = "${var.key_pair}"
   tags = {
-    Name ="SERVER01"
+    Name ="SERVER02"
     Environment = "DEV"
   }
   network_interface {
