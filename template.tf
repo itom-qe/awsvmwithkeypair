@@ -39,6 +39,10 @@ resource "aws_instance" "ec2ByTFE" {
   ami           = "${var.ami}"
   instance_type = "${var.instance_type}"
   key_name = "${var.key_pair}"
+  tags = {
+    Name ="SERVER01"
+    Environment = "DEV"
+  }
   network_interface {
     network_interface_id = "${aws_network_interface.nicByTFE.id}"
     device_index         = 0
