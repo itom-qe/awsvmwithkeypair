@@ -25,15 +25,8 @@ variable "key_pair" {
   type    = string
   default = "cpgkey"
 }
-resource "aws_vpc" "vpcByTFE" {
-  cidr_block  = "10.0.0.0/16"
-}
-resource "aws_subnet" "subnetByTFE" {
-  vpc_id      = "${aws_vpc.vpcByTFE.id}"
-  cidr_block  = "10.0.1.0/24"
-}
 resource "aws_network_interface" "nicByTFE" {
-  subnet_id = "${aws_subnet.subnetByTFE.id}"
+  subnet_id = "subnet-6d439635"
 }
 resource "aws_instance" "ec2ByTFE" {
   ami           = "${var.ami}"
